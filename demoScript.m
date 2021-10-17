@@ -15,10 +15,9 @@ addpath(genpath('C:\Users\avillago\Documents\matlabToolboxes\ecg-kit'));
 
 %% Load example signal
 
-listFiles = [4,9,25,44];
 close all;
 for p = 1 : 4
-    load(fullfile('.\templateFiles\',strcat('multiLeadECG',num2str(listFiles(p)))));
+    load(fullfile('.\templateFiles\',strcat('multiLeadECG',num2str(p))));
     
     %% 1 Filter signal and normalize
     
