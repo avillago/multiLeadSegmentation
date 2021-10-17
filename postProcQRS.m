@@ -1,4 +1,4 @@
-function [rPeaksMat,qOnMat,qOffMat] = postProcQRS(Fsignal,fs,rPeaksMat,qOnMat,qOffMat,qualLim,visu)
+function [rPeaksMat,qOnCorr,qOffCorr] = postProcQRS(Fsignal,fs,rPeaksMat,qOnMat,qOffMat,qualLim,visu)
 
 % Number of channels
 nChan = size(Fsignal,2);
@@ -189,7 +189,7 @@ for ch = 1 : nChan
         newSegments{idxBeats(hb),ch} = newSegments{idxBeats(hb),ch}(median(zeroHb(:,1)):median(zeroHb(:,2)));
         % Update QS
         qrsOnCorr(idxBeats(hb),ch) = qrsOnCorr(idxBeats(hb),ch) + median(zeroHb(:,1)) - 1;
-        qrsOffMat(idxBeats(hb),ch) = qrsOnCorr(idxBeats(hb),ch) + median(zeroHb(:,2)) - 1;
+        qOffCorr(idxBeats(hb),ch) = qrsOnCorr(idxBeats(hb),ch) + median(zeroHb(:,2)) - 1;
     end
     
 end
