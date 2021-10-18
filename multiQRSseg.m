@@ -29,6 +29,6 @@ for ch = 1 : nChan
 end
 
 %% 2.2 Post-processing QS to align heartbeats
-[rPeaksMat,qOnMat,qOffMat] = postProcQRS(Fsignal,fs,rPeaksMat,qOnMat,qOffMat,qualLim,visu);
+[rPeaksMat,qOnMat,qOffMat] = postProcQRS(Fsignal,rPeaksMat,qOnMat,qOffMat,qualLim,visu);
 
 
